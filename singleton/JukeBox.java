@@ -26,7 +26,7 @@ public class JukeBox {
     }
 
     public String playNextSong() {
-        if(songQueue.remove() == null) {
+        if(songQueue.peek() == null) {
             return "You need to add songs to the list";
         } else {
             return "Let's jam to " + songQueue.remove();
@@ -34,16 +34,18 @@ public class JukeBox {
     }
 
     public String requestSong(String title) {
+        int count = songQueue.size();
         for(Song song : songs) {
             if (song.toString().contains(title)) {
-                return title;
+                songQueue.add(song.toString());
+                return title + " is now " + ++count + " on our list";
             }
         }
         return "Sorry we do not have the song " + title;
     }
 
     public boolean hasMoreSongs() {
-        if(songQueue.remove() == null) {
+        if(songQueue.peek() == null) {
             return false;
         } else {
             return true;
