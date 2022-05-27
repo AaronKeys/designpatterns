@@ -10,6 +10,6 @@ public class Song {
     }
 
     public String toString() {
-        return "";
+        return title + " by " + artist;
     }
 }
