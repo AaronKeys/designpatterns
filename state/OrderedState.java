@@ -14,11 +14,11 @@ public class OrderedState extends State {
 
     public String getStatus() {
         String verb = getVerb("was", "were");
-        return " The " + this.pkg.getName() + verb + " ordered";
+        return "The " + pkg.getName() + verb + " ordered";
     }
 
     public String getETA() {
-        return "The " + this.pkg.getName() + " will be shipped within " + 
+        return "The " + pkg.getName() + " will be shipped within " + 
         days + " business days.";
     }
 
