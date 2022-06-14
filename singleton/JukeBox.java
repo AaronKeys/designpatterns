@@ -10,7 +10,7 @@ import java.util.LinkedList;
 
 public class JukeBox {
     private static JukeBox jukeBox;
-    private static ArrayList<Song> songs = DataLoader.getSongs();;
+    private static ArrayList<Song> songs = DataLoader.getSongs();
     private static Queue<String> songQueue = new LinkedList<String>();
     
     /**
