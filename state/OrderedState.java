@@ -1,22 +1,30 @@
 package state;
 
-public class OrderedState {
+public class OrderedState extends State {
     private int days;
+    private Package pkg;
+    private int quantity;
     
     public OrderedState(Package pkg, int quantity) {
-
+        super(pkg, quantity);
+        days = 2;
+        this.pkg = pkg;
+        this.quantity = quantity;
     }
 
     public String getStatus() {
-        
-        return "";
+        String verb = getVerb("was", "were");
+        return " The " + this.pkg.getName() + verb + " ordered";
     }
 
     public String getETA() {
-        return "";
+        return "The " + this.pkg.getName() + " will be shipped within " + 
+        days + " business days.";
     }
 
     public String delay() {
-        return "";
+        days += 2;
+        return "The " + pkg.getName() + " experienced a slight delay in manufacturing."
+               + "\n" + getETA();
     }
 }
