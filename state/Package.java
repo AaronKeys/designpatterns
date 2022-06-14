@@ -14,15 +14,15 @@ public class Package {
     }
 
     public String order() {
-
+        return "";
     }
 
     public String mail() {
-
+        return "";
     }
 
     public String received() {
-
+        return "";
     }
 
     public void delay() {
@@ -34,6 +34,6 @@ public class Package {
     }
 
     public String getName() {
-        
+        return "";
     }
 }
