@@ -13,7 +13,8 @@ public class OrderedState extends State {
     }
 
     public String getStatus() {
-        String verb = getVerb("was", "were");
+        //display is different on the output.txt but this is what is shows on the website.
+        String verb = getVerb("was", "were"); 
         return "The " + pkg.getName() + " " + verb + " ordered";
     }
 

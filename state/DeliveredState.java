@@ -1,8 +1,8 @@
 package state;
 
 public class DeliveredState extends State {
-    Package pkg;
-    int quantity;
+    private Package pkg;
+    private int quantity;
     public DeliveredState(Package pkg, int quantity) {
         super(pkg, quantity);
         this.pkg = pkg;

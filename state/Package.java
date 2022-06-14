@@ -6,34 +6,41 @@ public class Package {
     private int quantity;
     private State state;
     private State orderedState;
-    private State InTransitState;
+    private State inTransitState;
     private State deliveredState;
 
     public Package(String name, int quantity) {
-
+        this.name = name;
+        this.quantity = quantity;
+        this.inTransitState = new InTransitState(this, quantity);
+        this.deliveredState = new DeliveredState(this, quantity);
+        this.orderedState = new OrderedState(this, quantity);
     }
 
     public String order() {
-        return "";
+        this.state = orderedState;
+        return state.getStatus() + " \n" + state.getETA();
     }
 
     public String mail() {
-        return "";
+        this.state = inTransitState;
+        return state.getStatus() + " \n" + state.getETA();
     }
 
     public String received() {
-        return "";
+        this.state = deliveredState;
+        return state.getStatus();
     }
 
-    public void delay() {
-
+    public String delay() {
+        return state.delay();
     }
 
     public void setState(State state) {
-
+        this.state = state;
     }
 
     public String getName() {
-        return "";
+        return name;
     }
 }

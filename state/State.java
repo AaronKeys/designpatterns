@@ -5,7 +5,8 @@ public abstract class State {
     private int quantity;
 
     public State(Package pkg, int quantity) {
-        
+        this.pkg = pkg;
+        this.quantity = quantity;
     }
 
     public abstract String getStatus();
@@ -17,10 +18,8 @@ public abstract class State {
     protected String getVerb(String singular, String plural) {
         if(quantity == 1) {
             return singular;
-        } else if (quantity > 1) {
-            return plural;
         } else {
-            return "Wrong input";
+            return plural;
         }
     }
 }
