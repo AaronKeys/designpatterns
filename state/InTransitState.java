@@ -14,7 +14,7 @@ public class InTransitState extends State {
 
     public String getStatus() {
         String verb = getVerb("is", "are");
-        return "The " + pkg.getName() + verb + " out for delivery";
+        return "The " + pkg.getName() + " " + verb + " out for delivery";
     }
 
     public String getETA() {
@@ -25,7 +25,7 @@ public class InTransitState extends State {
     public String delay() {
         String verb = getVerb("has", "have");
         days += 3;
-        return "The " + pkg.getName() + verb + " experienced a delay in shipping" +
+        return "The " + pkg.getName() + " " + verb + " experienced a delay in shipping" +
                "\n" + getETA();
     }
 }

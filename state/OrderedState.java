@@ -14,7 +14,7 @@ public class OrderedState extends State {
 
     public String getStatus() {
         String verb = getVerb("was", "were");
-        return "The " + pkg.getName() + verb + " ordered";
+        return "The " + pkg.getName() + " " + verb + " ordered";
     }
 
     public String getETA() {
