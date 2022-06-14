@@ -1,6 +1,6 @@
 package state;
 
-public class State {
+public abstract class State {
     private Package pkg;
     private int quantity;
 
@@ -8,19 +8,19 @@ public class State {
         
     }
 
-    public String getStatus() {
-        return "";
-    }
+    public abstract String getStatus();
 
-    public String getETA() {
-        return "";
-    }
+    public abstract String getETA();
 
-    public String delay() {
-        return "";
-    }
+    public abstract String delay();
 
     protected String getVerb(String singular, String plural) {
-        return "";
+        if(quantity == 1) {
+            return singular;
+        } else if (quantity > 1) {
+            return plural;
+        } else {
+            return "Wrong input";
+        }
     }
 }
