@@ -31,7 +31,8 @@ public class MediaAdapter implements Media {
     }
 
     public void addReview(String firstName, String lastName, Date date, double rating, String comment) {
-
+        Review review = new Review(firstName, lastName, date, rating, comment);
+        littleMedia.addReview((firstName + " " + lastName), date, (int)Math.ceil(rating), comment);
     }
 
     public ArrayList<Review> getReviews() {
@@ -53,7 +54,7 @@ public class MediaAdapter implements Media {
             String firstName = userFullName[0]; //part 3
             String lastName = userFullName[1]; // part 4
             Date formattedDate = new Date(formatDate);
-            //String formattedDate = dateFormatter.format(formatDate);
+
             Review re = new Review(firstName, lastName, formattedDate, Double.parseDouble(rating), comment);
             r.add(re);
         }
