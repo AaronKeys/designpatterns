@@ -5,7 +5,6 @@ package adapter;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.time.format.DateTimeFormatter;
 
 public class MediaAdapter implements Media {
     /**
@@ -58,7 +57,6 @@ public class MediaAdapter implements Media {
      * @param comment , a comment that someone made on the book.
      */
     public void addReview(String firstName, String lastName, Date date, double rating, String comment) {
-        Review review = new Review(firstName, lastName, date, rating, comment);
         littleMedia.addReview((firstName + " " + lastName), date, (int)Math.ceil(rating), comment);
     }
     /**
